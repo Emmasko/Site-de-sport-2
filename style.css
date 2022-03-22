@@ -1,39 +1,63 @@
 
-
+*{ 
+    margin: 0;
+    padding: 0;
+}
 body{
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     
-    box-sizing: border-box;
+    
 }
 body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:  'Calibri', 'Gill Sans', 'Gill Sans MT', sans-serif, 'Trebuchet MS';
 }
 
 
 
 /* header */
+header {
+    margin-top: 0;
+    padding: 50px;
+    background: url(images/bulle.jpeg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
 
 /* Arrière plan body */
-section {
-    background: url(images/gim5.jpg) no-repeat;
+main {
+    background: url(images/bulle.jpeg) no-repeat;
     background-size: cover;
-    height: calc(420vh - 7vw);
+    height: calc(240vh - 3vw);
     background-position: center center;
     background-attachment: fixed;
 
 }
+@media all and (min-width: 901px) and (max-width: 1200px) {
+    main {
+        height: calc(220vh - 4vw);
+    }
+  }
+  @media all and (min-width: 601px) and (max-width: 900px) {
+    main {
+        height: calc(350vh - 4vw);
+    }
+  }
+
+  @media all and (max-width: 600px) {
+    main {
+        height: calc(330vh - 4vw);
+    }
+  }
+  
 
 
-
-
-
-
-
+  
 
 /* header static */
 .fancy {
-    color: #D2B48C;
+    color: #A0522D;
     text-align: left;
     font-family: Comic Sans MS, Comic Sans, cursive;
     line-height: 50px;
@@ -41,9 +65,9 @@ section {
     margin: 10px 20px;
     font-size: 100px;
     margin-top: 20px;
-    padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
 }
+
 
 @media screen and (max-width: 600px) {
     .fancy {
@@ -53,7 +77,7 @@ section {
 
 @media screen and (max-width: 400px) {
     .fancy {
-        font-size:50px;
+        font-size:40px;
         
     }
   }
@@ -63,17 +87,20 @@ nav{
     display: flex;
     margin-top: 30px;
 }
+
 nav>a{
     display: block;
     width: 400px;
-    background-color: #D2B48C;
+    background-color: #A0522D;
     text-align: center;
     box-sizing: border-box;
     padding: 20px;
     color: #FFF;
     margin: 1px;
-    text-decoration: none; /* Supprime le surlignage des liens hypertexte */
+    text-decoration: none; 
+    border-radius: 10px;
 }
+
 nav>a:hover{
     background-color: #D2B48C;
     color: #000;
@@ -85,18 +112,20 @@ nav>a:hover{
 #lab{
     width: 30px;
     height: 30px;
-    background: linear-gradient(#FFF 0%,#FFF 20%,transparent 21%, transparent 40%,#FFF 41%,#FFF 60%,transparent 61%, transparent 80%,#FFF 81%, #FFF 100%);
+    background: linear-gradient(#A0522D 0%,#A0522D 20%,transparent 21%, transparent 40%,#A0522D 41%,#A0522D 60%,transparent 61%, transparent 80%,#A0522D 81%, #A0522D 100%);
     margin: 4px;
     display: none; /* Faire disparaitre le label lorsque l'écran s'acradit */
 }
+
 @media all and (max-width: 960px){
-    nav{
+    nav {
         display: block;
         position: absolute;
         left: 0; /* Pour que la barre de nav occupe tout l'espace */
         right: 0;/* Pour que la barre de nav occupe tout l'espace */
         transform: translate(-1000px,0); /* Le menu disparait */
         transition: all 0.9s ease;
+        margin-bottom: 240px;
     }
     nav>a{
         width: auto;
@@ -109,21 +138,12 @@ nav>a:hover{
         display: block;
     }
 }
-div.sticky {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    padding: 5px;
-    background-color: #A0522D;
-    height: 300px;
 
-}
 
 
 /* Effet scroll Accueil avec texte 1*/
-section-2 {
+.textoverpic {
     height: 90vh;
-    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -135,22 +155,32 @@ section-2 {
     background-attachment: fixed;
     font-size: 5vw;
 }
-section-2:first-of-type {
+.textoverpic:first-of-type {
     text-transform: uppercase;
     font-size: 1vw;
 }
-section-2:first-of-type, section.pop {
+.textoverpic:first-of-type, .pop {
     color: #fff;
     text-shadow: 0 0 5px rgba(0,0,0,0.4);
 }
-section-2:nth-of-type(even) {
+.textoverpic:nth-of-type(even) {
     background: #fff;
 }
-section-2:nth-of-type(1) {
+.textoverpic:nth-of-type(1) {
     background-image: url(images/course3.jpg);
 }
+.textoverpic h1 {
+    color: #0c0c0cd3;
+}
+@media screen and (max-width: 600px) {
+    .textoverpic h1{
+        margin-top: 370px;
+        
+    }
+    
+}
 
-section-2 h4{
+.textoverpic h4{
     color: #0c0c0cd3;
     text-align: justify;
     font-weight: bold;
@@ -159,14 +189,11 @@ section-2 h4{
     margin-left: 50px;
 }
 @media screen and (max-width: 600px) {
-    section-2 h4{
-        
-        font-size:15px;
+    .textoverpic h4{
+        font-size:12px;
         margin-left: 10px;
-        margin-right: 10px;
-        
-    }
-    
+        margin-right: 10px;   
+    }   
 }
 
 
@@ -176,10 +203,13 @@ section-2 h4{
     font-weight: 900;
     font-size: 3.3em;
     text-align: center;
-    
-    
     color: #6b3e02;
   }
+  @media screen and (max-width: 600px) {
+    .ml6 {
+        font-size:35px;
+    }   
+}
   
   .ml6 .text-wrapper {
     position: relative;
@@ -199,6 +229,7 @@ section-2 h4{
 
 .sport h1 {
     color: #6b3e02;
+    text-align: center;
 }
 
 .sport img{
@@ -211,17 +242,19 @@ section-2 h4{
     
         
 }
-@media all and (min-width: 401px) and (max-width: 1280px) {
+@media all and (min-width: 601px) and (max-width: 1280px) {
     .sport img {
-        margin-left: 150px;
+        margin-left: 160px;
     }
     body {
         overflow-x: hidden;
     }
   }
-  @media all and (max-width: 400px) {
+  @media all and (max-width: 600px) {
     .sport img {
-        margin-left: 75px;
+        margin-left: 130px;
+        width: 100px;
+        height: 100px;
     }
     body {
         overflow-x: hidden;
@@ -232,19 +265,18 @@ section-2 h4{
 
 /*texte 2 sur image page d'accueil */
 
-section h1{
-    text-align: center;
 
-    
-}
 .popo{
     margin-top: 100px;
-    color: #6b3e02;
+    color: #523106;
     font-size: 1.2vw;
     text-align: justify;
     margin-left: 20px;
     margin-right: 20px;
 
+}
+.popo h2{
+    text-align: center;
 }
 
 @media screen and (min-width: 601px) and (max-width: 1280px){
@@ -274,6 +306,28 @@ section h1{
     .popo h2{
         font-size: 30px;
     }
+}
+span .letters {
+    font-size: 50px;
+}
+@media screen and (min-width: 601px) and (max-width: 1280px){
+    span .letters {
+        
+        font-size:50px;
+    }
+}
+
+@media screen and (min-width: 401px) and (max-width: 600px){
+    span .letters {
+        
+        font-size:30px;
+    }
+}
+@media screen and (max-width: 400px) {
+    span .letters {
+        font-size: 30px;
+    }
+    
 }
 
 
@@ -344,12 +398,22 @@ section h1{
         
     }
   }
+  
 
-section-7 h1{
+.navo h1{
         color: #302102;
         margin-top: 20px;
         margin-bottom: 10px;
-}  
+        margin-left: 20px;
+}
+@media screen and (max-width: 600px) {
+    .navo h1 {
+        width: 400px;
+        margin-left: 5px;
+        margin-top: 250px;
+        
+    }
+  }  
 #div1, #div2, #div3 {
     display: inline-block;
     width: 30%;
@@ -372,18 +436,17 @@ section-7 h1{
 #div3 img{
     width: 30%;
 }
-
-@media screen and (max-width: 680px){
+@media(min-width: 768px) and (max-width: 1388px){
     #div1, #div2, #div3 {
         width: 90%;
-        border-right: none;
-        
-        margin-left: 15px;
-        margin-right: 5px;
     }
-
-    
 }
+@media(max-width: 767px) {
+    #div1, #div2, #div3 {
+        width :80%;
+    }
+}
+
 
 .forme{
     margin-top: 50px;
@@ -420,6 +483,10 @@ section-7 h1{
     margin-top: 10px;
 }
 
+.titro {
+    margin-left: 20px;
+}
+
 @media all and (max-width: 600px){
     .column-a h1 {
         margin-top: 10px;
@@ -437,6 +504,7 @@ section-7 h1{
     .column-a {
         width: 300px;
         margin-left: 24px;
+        margin-top: 200px;
 
     }
  }
@@ -464,8 +532,6 @@ section-7 h1{
     .column-a img {
         width: 300px;
         margin-left: 10px;
-        
-
     }
  }
 
@@ -506,6 +572,11 @@ z-index:10;
     margin-bottom: 50px;
     width: 50vw;
 }
+@media all and (max-width: 600px){
+    .asso {
+        margin-top: 150px;
+    }
+ }
 .col{
     color: #696969;
 }
@@ -563,93 +634,6 @@ z-index:10;
     }
   }
 
-
-
-
-/* footer */
-.foote {
-    padding: 15px 10px;
-    margin: auto;
-    color: rgb(88, 85, 85);
-    text-align: center;
-    margin-top: none;
-}
-.foote a{
-    color: gray;
-    text-decoration: none;
-}
-
-.foote h3 {
-    font-size: 200%;
-    color: gray;
-}
-
-.foote p {
-    
-    color: gray;
-}
-
-.foote-text {
-    font-weight: bold;
-}
-
-hr {
-    width: 100%;
-    color: rgba(199, 199, 199, 0.178); /* POUR METTRE UN TRAIT APRES CONTACT */
-    
-    
-    
-}
-
-section-5 h1{
-    color: #696969;
-    margin-top: 100px;
-      
-}
-
-footer{
-    background-color: #edca9f;
-    height: 430px;
-
-    
-}
-
-.navi ul {
-    padding:0;
-    margin:0;
-    list-style-type:none;
-    margin-left: 32%;
-
-    }
-    @media all and (max-width: 600px) {
-    .navi ul{
-        margin-right: 60px;
-    }
-  }
-   .navi li {
-    margin-left:2px;
-    float:left; 
-    }
-    .navi ul li a {
-    display:block;
-    float:left;   
-    width:100px;
-    background-color:#A0522D;
-    color:white;
-    text-decoration:none;
-    text-align:center;
-    padding:5px;
-    border:2px solid;
-    /*pour avoir un effet "outset" avec IE :*/
-    border-color:#DCDCDC #696969 #696969 #DCDCDC;
-    
-    }
-    .navi ul li a:hover {
-    background-color:#D3D3D3;
-    border-color:#696969 #DCDCDC #DCDCDC #696969;
-    } 
-
-
 /* Carte page contact */
 .map{
     text-align: center;
@@ -658,6 +642,11 @@ footer{
     height: auto;
    
 }
+@media all and (max-width: 600px) {
+    .map iframe {
+        width: 80%;
+    }
+  }
 
 
 /* Contact pour le Site */
@@ -668,6 +657,11 @@ footer{
     color: gray;
 
 }
+@media all and (max-width: 600px){
+    .forme {
+        margin-top: 250px;
+    }
+ }
 
 /* formulaire page contact */
 body {font-family: Arial, Helvetica, sans-serif;
@@ -717,9 +711,106 @@ body {font-family: Arial, Helvetica, sans-serif;
     color: gray;
     width: 100%;
   }
-  section-5{
+  
+
+  /* footer */
+.foote {
+    padding: 15px 10px;
+    margin: auto;
+    color: rgb(88, 85, 85);
+    text-align: center;
+    margin-top: inherit;
+}
+.foote a{
+    color: gray;
+    text-decoration: none;
+}
+
+.foote h3 {
+    font-size: 200%;
+    color: gray;
+}
+
+.foote p {
+    
+    color: gray;
+}
+
+.foote-text {
+    font-weight: bold;
+}
+
+hr {
     width: 100%;
+    color: rgba(199, 199, 199, 0.178); /* POUR METTRE UN TRAIT APRES CONTACT */
+    
+    
+    
+}
+
+.navi h1{
+    color: #696969;
+    margin-top: 100px;
+      
+}
+
+footer{
+    background-color: #edca9f;
+    height: 460px;
+
+    
+}
+
+
+.navi ul {
+    padding:0;
+    margin:0;
+    list-style-type:none;
+    margin-left: 32%;
+
+}
+@media screen and (min-width: 901px) and (max-width: 1280px) {
+    .navi ul {
+        width: 550px;
+        margin-left: 140px;
+    }
   }
+  @media screen and (min-width: 601px) and (max-width: 900px) {
+    .navi ul {
+        width: 600px;
+        margin-left: 160px;
+    }
+  }
+@media all and (max-width: 600px) {
+    .navi ul {
+        margin-right: 55px;
+        width: 200px;
+    }
+    }
+    
+   .navi li {
+    margin-left:2px;
+    float:left; 
+    }
+    
+    .navi ul li a {
+    display:block;
+    float:left;   
+    width:100px;
+    background-color:#A0522D;
+    color:white;
+    text-decoration:none;
+    text-align:center;
+    padding:5px;
+    border:2px solid;
+    /*pour avoir un effet "outset" avec IE :*/
+    border-color:#DCDCDC #696969 #696969 #DCDCDC;
+    
+    }
+    .navi ul li a:hover {
+    background-color:#d17c0a;
+    border-color:#696969 #DCDCDC #DCDCDC #696969;
+    } 
   
   
   
